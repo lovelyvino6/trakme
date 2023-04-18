@@ -1,0 +1,7 @@
+{
+  "name": "Track-me",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
