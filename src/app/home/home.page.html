@@ -1,20 +1,84 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header color="primary">
+	<ion-toolbar color="primary">
+		<ion-title class="ion-text-start">
+			Hello Vinoth
+			<br>
+			<small>0006</small>
+		</ion-title>
+
+		<ion-buttons slot="end">
+			<ion-button color="light" size="small" id="more-option-trigger">
+				<ion-icon slot="icon-only" name="ellipsis-vertical"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+
+		<ion-popover trigger="more-option-trigger" triggerAction="click" [dismissOnSelect]="true" side="end">
+			<ng-template>
+				<ion-content>
+					<ion-list>
+						<ion-item lines="none" [button]="true" [detail]="false">
+							Profile
+						</ion-item>
+					</ion-list>
+				</ion-content>
+			</ng-template>
+		</ion-popover>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ng-container *ngIf="is_loading">
+		<ion-list>
+			<ion-list-header>
+				<ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+			</ion-list-header>
+			<ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+				<ion-label>
+					<h3>
+						<ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+					</h3>
+					<p>
+						<ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+					</p>
+					<p>
+						<ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+					</p>
+				</ion-label>
+			</ion-item>
+
+
+		</ion-list>
+
+		<ion-list>
+			<ion-list-header>
+				<ion-skeleton-text [animated]="true" style="width: 80px"></ion-skeleton-text>
+			</ion-list-header>
+			<ion-item>
+
+				<ion-label>
+					<h3>
+						<ion-skeleton-text [animated]="true" style="width: 80%;"></ion-skeleton-text>
+					</h3>
+					<p>
+						<ion-skeleton-text [animated]="true" style="width: 60%;"></ion-skeleton-text>
+					</p>
+					<p>
+						<ion-skeleton-text [animated]="true" style="width: 30%;"></ion-skeleton-text>
+					</p>
+				</ion-label>
+			</ion-item>
+
+
+		</ion-list>
+	</ng-container>
 </ion-content>
+
+<ion-footer>
+	<ion-toolbar color="primary">
+		<div class="footer">
+			<ion-button fill="clear" size="small" color="light" *ngIf="background_tracking">Stop</ion-button>
+			<ion-button fill="clear" size="small" color="light" *ngIf="!background_tracking">Start</ion-button>
+		</div>
+	</ion-toolbar>
+</ion-footer>
